@@ -1,0 +1,244 @@
+/* gokarna3.com.np — Gokarna Bahadur Thapa */
+
+:root {
+  --bg: #ffffff;
+  --ink: #1a1d21;
+  --ink-2: #4a545c;
+  --ink-3: #79848c;
+  --line: #e2e6e9;
+  --accent: #2c6b8a;
+  --accent-dark: #1e4f68;
+  --serif: "Literata", Georgia, "Times New Roman", serif;
+  --sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --measure: 680px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  padding-inline: 24px;
+}
+
+.wrap { max-width: var(--measure); margin: 0 auto; }
+
+/* ---------- header ---------- */
+
+.site-header {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding-block: 44px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.site-name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-size: 15.5px;
+}
+
+.site-nav a {
+  color: var(--ink-2);
+  text-decoration: none;
+  padding-block: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav a:hover { color: var(--accent); }
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/* ---------- page ---------- */
+
+main { max-width: var(--measure); margin: 0 auto; padding-block: 64px 0; }
+
+h1 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(30px, 5.5vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  margin: 0 0 8px;
+  text-wrap: balance;
+}
+
+.standfirst {
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0 0 44px;
+  max-width: 34em;
+}
+
+h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 1.25;
+  letter-spacing: -0.012em;
+  margin: 56px 0 16px;
+  text-wrap: balance;
+}
+
+h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.35;
+  margin: 36px 0 8px;
+  text-wrap: pretty;
+}
+
+p { margin: 0 0 20px; }
+
+a { color: var(--accent); text-underline-offset: 2px; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent-dark); }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 56px 0;
+}
+
+/* ---------- dated entries ---------- */
+
+.entries { margin: 0 0 8px; }
+
+.entry {
+  display: grid;
+  grid-template-columns: 108px minmax(0, 1fr);
+  gap: 4px 20px;
+  padding-block: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.entry:last-child { border-bottom: 1px solid var(--line); }
+
+.entry .when {
+  font-size: 15px;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+  padding-top: 3px;
+}
+
+.entry .what { margin: 0; }
+.entry .what strong { font-weight: 600; }
+.entry .what .detail { display: block; color: var(--ink-2); font-size: 16.5px; margin-top: 3px; }
+
+@media (max-width: 560px) {
+  .entry { grid-template-columns: 1fr; gap: 2px; }
+  .entry .when { padding-top: 0; }
+}
+
+/* ---------- works ---------- */
+
+.work { padding-block: 8px 28px; }
+.work h3 { margin-top: 0; }
+.work p { color: var(--ink-2); margin-bottom: 0; }
+.work + .work { border-top: 1px solid var(--line); padding-top: 28px; }
+
+/* ---------- citations ---------- */
+
+.cite {
+  margin: 0 0 22px;
+  padding-left: 20px;
+  border-left: 2px solid var(--line);
+  font-size: 17px;
+  color: var(--ink-2);
+}
+.cite .title { color: var(--ink); }
+.cite .status {
+  display: inline-block;
+  font-size: 13.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-left: 2px;
+}
+
+/* ---------- figures ---------- */
+
+figure { margin: 36px 0; }
+figure img { width: 100%; height: auto; display: block; }
+figcaption {
+  font-size: 15px;
+  color: var(--ink-3);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* ---------- tools ---------- */
+
+.tools { color: var(--ink-2); font-size: 16.5px; }
+
+/* ---------- teaser ---------- */
+
+.teaser {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding-block: 32px;
+  margin: 56px 0;
+}
+.teaser h2 { margin-top: 0; }
+.teaser p:last-of-type { margin-bottom: 0; }
+
+.more {
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+/* ---------- contact ---------- */
+
+.contact-list { list-style: none; margin: 24px 0 0; padding: 0; }
+.contact-list li { margin-bottom: 10px; }
+.contact-list .label {
+  display: inline-block;
+  min-width: 92px;
+  color: var(--ink-3);
+  font-size: 15px;
+}
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  max-width: var(--measure);
+  margin: 96px auto 0;
+  padding-block: 28px 56px;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+  color: var(--ink-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--ink-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
